@@ -9,7 +9,7 @@ class App extends React.Component {
     images: []
   };
 
-  async onSearchSubmit(term) {
+  onSearchSubmit = async term => {
     // receives 2 arguments url string and the options object
     // Add authorization on the header options object
     const response = await axios.get('https://api.unsplash.com/search/photos', {
@@ -22,7 +22,7 @@ class App extends React.Component {
 
     console.log(this);
     this.setState({ images: response.data.results });
-  }
+  };
 
   render() {
     return (
