@@ -4,12 +4,20 @@ class ImageCard extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = { spans: 0 };
     // this.imageRef is the instance variable
     this.imageRef = React.createRef();
   }
+  setSpans = () => {
+    const height = this.imageRef.current.clientHeight;
+
+    const spans = Math.ceil(height / 150);
+
+    this.setSpans({ spans });
+  };
 
   componentDidMount() {
-    console.log(this.imageRef);
+    this.imageRef.current.addEventListener('load', this.setSpans);
   }
 
   render() {
