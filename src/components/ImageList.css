@@ -1,8 +1,8 @@
 .image-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 10px;
-  grid-auto-rows: 150px;
+  grid-gap: 0 10px; /* allocates the amount of gap between each grid item, we can specify the gap direction as well vertical/horizontal  0px between each row at 10px between each column */
+  grid-auto-rows: 10px; /* this allocates space to each row  */
 }
 
 .image-list img {
